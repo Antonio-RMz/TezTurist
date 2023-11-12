@@ -8,21 +8,31 @@
         android:id="@+id/page_inicio"
         android:name="com.example.tezturist.FragmentUno"
         tools:layout="@layout/fragment_uno">
+
         <action
             android:id="@+id/action_page_inicio_to_fragmentAtoluca"
             app:destination="@id/fragmentAtoluca" />
+        <action
+            android:id="@+id/action_page_inicio_to_activityAtoluca"
+            app:destination="@id/activityAtoluca" />
 
 
     </fragment>
 
-    <fragment
-        android:id="@+id/page_configuracion"
-        android:name="com.example.tezturist.FragmentDos"
-        tools:layout="@layout/fragment_dos"/>
+
+
+
+
+
     <fragment
         android:id="@+id/page_rutas"
         android:name="com.example.tezturist.FragmentTres"
+        tools:layout="@layout/fragment_dos"/>
+    <fragment
+        android:id="@+id/page_configuracion"
+        android:name="com.example.tezturist.FragmentDos"
         tools:layout="@layout/fragment_tres"/>
+
     <fragment
         android:id="@+id/fragmentAtoluca"
         android:name="com.example.tezturist.FragmentAtoluca"
@@ -32,4 +42,10 @@
             android:id="@+id/action_fragmentAtoluca_to_page_inicio"
             app:destination="@id/page_inicio" />
     </fragment>
+    <activity
+        android:id="@+id/activityAtoluca"
+        android:name="com.example.tezturist.ActivityAtoluca"
+        android:label="activity_atoluca"
+        tools:layout="@layout/activity_atoluca" />
+
 </navigation>

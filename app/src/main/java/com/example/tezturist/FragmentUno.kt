@@ -65,7 +65,7 @@ class FragmentUno : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val b1 = view.findViewById<Button>(R.id.button1)
 
-        b1.setOnClickListener { findNavController(view).navigate(R.id.action_page_inicio_to_fragmentAtoluca) }
+        b1.setOnClickListener { findNavController(view).navigate(R.id.action_page_inicio_to_activityAtoluca) }
 
     }
 

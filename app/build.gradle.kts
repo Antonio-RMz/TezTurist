@@ -1,3 +1,5 @@
+@file:Suppress("UNUSED_EXPRESSION")
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
@@ -8,9 +10,12 @@ android {
     compileSdk = 34
 
     defaultConfig {
+        buildFeatures{
+            viewBinding = true
+        }
         applicationId = "com.example.tezturist"
         minSdk = 24
-        targetSdk = 33
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
@@ -44,6 +49,20 @@ dependencies {
     implementation("androidx.navigation:navigation-fragment-ktx:2.7.5")
     implementation("androidx.navigation:navigation-ui-ktx:2.7.5")
     testImplementation("junit:junit:4.13.2")
+
+//para caruusel
+    androidTestImplementation ("androidx.test.ext:junit:1.1.5")
+    androidTestImplementation ("androidx.test.espresso:espresso-core:3.5.1")
+    implementation ("com.github.bumptech.glide:glide:4.16.0")
+
+
+
+
+
+
+
+
+
 
 
 

@@ -15,6 +15,9 @@
         android:theme="@style/Theme.TezTurist"
         tools:targetApi="31">
         <activity
+            android:name=".ActivityFragment"
+            android:exported="false" />
+        <activity
             android:name=".ActivityAtoluca"
             android:exported="false" />
         <activity

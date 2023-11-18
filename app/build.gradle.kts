@@ -3,6 +3,7 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -48,6 +49,7 @@ dependencies {
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation("androidx.navigation:navigation-fragment-ktx:2.7.5")
     implementation("androidx.navigation:navigation-ui-ktx:2.7.5")
+    implementation("com.google.firebase:firebase-database:20.3.0")
     testImplementation("junit:junit:4.13.2")
 
 //para caruusel
@@ -56,8 +58,24 @@ dependencies {
     implementation ("com.github.bumptech.glide:glide:4.16.0")
 
 
+    //firebase
+    //dependencia para Firebase Realtime
+    implementation ("com.firebaseui:firebase-ui-database:8.0.2")
+
+    //dependencia para CircleImageView
+    implementation ("de.hdodenhof:circleimageview:3.1.0")
+
+    //dependencia para Glide
+    implementation ("com.github.bumptech.glide:glide:4.16.0")
+    //dependencias para el cardView
+    implementation ("androidx.cardview:cardview:1.0.0")
+    //recyclerView
+    implementation("androidx.recyclerview:recyclerview:1.2.1")
 
 
+// material design 3
+    implementation ("androidx.compose.material3:material3:1.0.1")
+    implementation ("androidx.compose.material3:material3-window-size-class:1.0.1")
 
 
 

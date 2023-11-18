@@ -1,5 +1,5 @@
 package com.example.tezturist;
-
+//clase para el carrusel
 import android.os.Bundle;
 import android.widget.ImageView;
 

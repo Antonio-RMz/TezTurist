@@ -1,5 +1,5 @@
 package com.example.tezturist;
-
+//clase para el carrusel
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;

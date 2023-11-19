@@ -1,5 +1,5 @@
 package com.example.tezturist;
-
+//fragmento donde se ve la informacion de firebase
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -19,6 +19,7 @@ public class FragmentTres extends Fragment {
         // Required empty public constructor
     }
 
+//segun yo este fragment tres no sirve pa nada
     public static FragmentTres newInstance(String param1, String param2) {
         FragmentTres fragment = new FragmentTres();
         Bundle args = new Bundle();

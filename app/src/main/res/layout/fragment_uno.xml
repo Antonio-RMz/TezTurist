@@ -17,21 +17,47 @@
         android:orientation="vertical">
 
 
-        <Button
-            style="?attr/materialButtonOutlinedStyle"
-            android:id="@+id/outlinedButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Outlined button"
-            />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        <Button
-            style="@style/Widget.Material3.Button.ElevatedButton"
-            android:id="@+id/elevatedButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Elevated button"
-            />
+            <View
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@drawable/bg_view"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="109dp"
+                android:layout_height="96dp"
+                android:src="@drawable/img_logo_teztur"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/view"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/view"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="96dp"
+                android:layout_height="83dp"
+                android:src="@drawable/img_logo_blanco"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.868"
+                app:layout_constraintStart_toEndOf="@+id/imageView4"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/card_teziutlan"
             android:layout_width="match_parent"
@@ -54,7 +80,6 @@
                     android:contentDescription="Hola aqui vamos aponer una descripcion "
                     android:scaleType="centerCrop"
                     app:srcCompat="@drawable/img_teziutlan_iglesia" />
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -65,21 +90,20 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Texto para titulo"
-                        android:textAppearance="?attr/textAppearanceTitleMedium"
-                        />
+                        android:fontFamily="@font/letter_oleo_bold"
+                        android:text="Teziutlán"
+                        android:textAppearance="?attr/textAppearanceTitleMedium" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:text="Texto para la descripcion "
+                        android:text="La perla de la sierra"
                         android:textAppearance="?attr/textAppearanceBodyMedium"
-                        android:textColor="?android:attr/textColorSecondary"
-                        />
+                        android:textColor="?android:attr/textColorSecondary" />
 
 
                 </LinearLayout>
-
                 <!-- Buttons -->
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -133,7 +157,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Texto en la imagen "
+                        android:text="Atoluca "
                         android:textAppearance="?attr/textAppearanceTitleMedium"
                         />
                     <TextView
@@ -175,6 +199,8 @@
                         style="?attr/borderlessButtonStyle" />
                 </LinearLayout>
 
+
+
             </LinearLayout>
 
         </com.google.android.material.card.MaterialCardView>
@@ -208,7 +234,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Texto en la imagen "
+                    android:text="Mexcal "
                     android:textAppearance="?attr/textAppearanceTitleMedium"
                     />
                 <TextView
@@ -478,6 +504,7 @@
             </LinearLayout>
 
         </com.google.android.material.card.MaterialCardView>
+
     </LinearLayout>
 
     </ScrollView>

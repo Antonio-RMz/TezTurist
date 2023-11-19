@@ -4,6 +4,7 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("com.google.gms.google-services")
+    id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin")
 }
 
 android {
@@ -39,6 +40,9 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
@@ -50,6 +54,7 @@ dependencies {
     implementation("androidx.navigation:navigation-fragment-ktx:2.7.5")
     implementation("androidx.navigation:navigation-ui-ktx:2.7.5")
     implementation("com.google.firebase:firebase-database:20.3.0")
+    implementation("com.google.android.gms:play-services-maps:18.1.0")
     testImplementation("junit:junit:4.13.2")
 
 //para caruusel
@@ -77,7 +82,8 @@ dependencies {
     implementation ("androidx.compose.material3:material3:1.0.1")
     implementation ("androidx.compose.material3:material3-window-size-class:1.0.1")
 
-
+//para google maps
+    implementation ("com.google.android.gms:play-services-maps:18.1.0")
 
 
 

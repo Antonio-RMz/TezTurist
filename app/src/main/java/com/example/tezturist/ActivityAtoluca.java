@@ -2,14 +2,16 @@ package com.example.tezturist;
 //clase para el carrusel, son tres en total
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
-
 import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
-
 import java.util.ArrayList;
+import com.example.tezturist.R;
 
 public class ActivityAtoluca extends AppCompatActivity {
 
@@ -44,7 +46,40 @@ public class ActivityAtoluca extends AppCompatActivity {
             @Override
             public void onClick(ImageView imageView, String path) {
                 startActivity(new Intent(ActivityAtoluca.this, ImageViewActivity.class).putExtra("image", path), ActivityOptions.makeSceneTransitionAnimation(ActivityAtoluca.this, imageView, "image").toBundle());
+
+
+
             }
         });
+        // Configuración de los botones y sus manejadores de clics
+        Button buttonActividades = findViewById(R.id.btnActividades);
+        Button buttonEventos = findViewById(R.id.btnEventos);
+        Button buttonHistoria = findViewById(R.id.btnHistoria);
+
+        View.OnClickListener buttonClickListener = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Fragment fragment;
+
+                if (view.getId() == R.id.btnActividades) {
+                    fragment = new FragmentActividades();
+                } else if (view.getId() == R.id.btnEventos) {
+                    fragment = new FragmentEventos();
+                } else if (view.getId() == R.id.btnHistoria) {
+                    fragment = new FragmentTres();
+                } else {
+                    fragment = new FragmentActividades(); // Fragmento predeterminado
+                }
+
+                // Reemplazar el fragmento en el FrameLayout
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.fragmentContainer, fragment)
+                        .commit();
+            }
+        };
+
+        buttonActividades.setOnClickListener(buttonClickListener);
+        buttonEventos.setOnClickListener(buttonClickListener);
+        buttonHistoria.setOnClickListener(buttonClickListener);
     }
 }

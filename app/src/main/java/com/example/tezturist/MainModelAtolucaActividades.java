@@ -1,12 +1,14 @@
 package com.example.tezturist;
-//clase para firabase
-public class MainModelTres {
-    String descripcion, imagen, nombre;
-MainModelTres(){
+
+public class MainModelAtolucaActividades {
+    String descripcion, imagen,nombre;
+
+    //este no sé pa que es
+MainModelAtolucaActividades(){
 
 
 }
-    public MainModelTres(String descripcion, String imagen, String nombre) {
+    public MainModelAtolucaActividades(String descripcion, String imagen, String nombre) {
         this.descripcion = descripcion;
         this.imagen = imagen;
         this.nombre = nombre;

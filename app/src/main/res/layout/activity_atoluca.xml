@@ -98,13 +98,11 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_marginStart="5dp"
-
             android:layout_marginTop="1dp"
-            android:layout_marginBottom="200dp">
-
+            android:layout_marginBottom="2dp">
 
             <Button
-                android:id="@+id/button1"
+                android:id="@+id/btnActividades"
                 style="@style/Widget.Material3.Button.ElevatedButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -113,7 +111,7 @@
                 app:icon="@drawable/correr" />
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/btnEventos"
                 style="@style/Widget.Material3.Button.ElevatedButton"
                 android:layout_width="103dp"
                 android:layout_height="wrap_content"
@@ -122,7 +120,7 @@
                 app:icon="@drawable/estrella_del_calendario" />
 
             <Button
-                android:id="@+id/button3"
+                android:id="@+id/btnHistoria"
                 style="@style/Widget.Material3.Button.ElevatedButton"
                 android:layout_width="130dp"
                 android:layout_height="wrap_content"
@@ -130,8 +128,16 @@
                 android:textSize="8sp"
                 app:icon="@drawable/tiempo_pasado" />
         </com.google.android.material.button.MaterialButtonToggleGroup>
+<!--Este sera el fragmento que estara cambiando dependiendo el boton que se seleccione-->
+        <FrameLayout
+            android:id="@+id/fragmentContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/toggleButton"
+            android:layout_marginTop="8dp">
 
 
+        </FrameLayout>
     </LinearLayout>
 
     </ScrollView>

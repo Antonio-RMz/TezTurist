@@ -1,5 +1,6 @@
 package com.example.tezturist;
 //clase para el carrusel, son tres en total
+//clase que le da funcionalidad a los botones que cambian de fragmento
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -71,7 +72,7 @@ public class ActivityAtoluca extends AppCompatActivity {
                     fragment = new FragmentActividades(); // Fragmento predeterminado
                 }
 
-                // Reemplazar el fragmento en el FrameLayout
+                // Reemplazar el fragmento en el FrameLayout(Contenedor de fragmentos para cambiar con los botones)
                 getSupportFragmentManager().beginTransaction()
                         .replace(R.id.fragmentContainer, fragment)
                         .commit();

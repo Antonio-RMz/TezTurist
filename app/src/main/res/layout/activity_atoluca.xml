@@ -138,6 +138,11 @@
 
 
         </FrameLayout>
+
+        <!--Aqui iria el boton para mandar al mapa-->
+
+
+
     </LinearLayout>
 
     </ScrollView>

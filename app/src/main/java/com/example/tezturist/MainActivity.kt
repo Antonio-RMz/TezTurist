@@ -12,6 +12,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         setupNavegacion()
     }
+
+    //metodo para la barra de navegacion
     private fun setupNavegacion() {
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
         val navHostFragment =

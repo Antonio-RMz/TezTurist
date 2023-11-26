@@ -1,4 +1,4 @@
-package com.example.tezturist;
+package com.example.tezturist.atoluca;
 //clase para el carrusel, son tres en total
 //clase que le da funcionalidad a los botones que cambian de fragmento
 
@@ -11,8 +11,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import java.util.ArrayList;
+
+import com.example.tezturist.atoluca.fragmentsBotones.FragmentActividades;
+import com.example.tezturist.atoluca.fragmentsBotones.FragmentEventos;
+import com.example.tezturist.atoluca.carruselAtoluca.ImageAdapter;
+import com.example.tezturist.atoluca.carruselAtoluca.ImageViewActivity;
 import com.example.tezturist.R;
+import com.example.tezturist.fragmentsPrincipales.FragmentTres;
+
+import java.util.ArrayList;
 
 public class ActivityAtoluca extends AppCompatActivity {
 

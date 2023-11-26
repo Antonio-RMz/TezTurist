@@ -1,4 +1,4 @@
-package com.example.tezturist;
+package com.example.tezturist.atoluca.carruselAtoluca;
 //clase para el carrusel
 import android.os.Bundle;
 import android.widget.ImageView;
@@ -6,6 +6,7 @@ import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
+import com.example.tezturist.R;
 
 public class ImageViewActivity extends AppCompatActivity {
 

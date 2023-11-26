@@ -72,7 +72,7 @@ dependencies {
     implementation ("de.hdodenhof:circleimageview:3.1.0")
 
     //dependencia para Glide
-    implementation ("com.github.bumptech.glide:glide:4.16.0")
+    //implementation ("com.github.bumptech.glide:glide:4.16.0")
     //dependencias para el cardView
     implementation ("androidx.cardview:cardview:1.0.0")
     //recyclerView
@@ -87,8 +87,7 @@ dependencies {
     implementation ("com.google.android.gms:play-services-maps:18.1.0")
 
 
-
-
-
-
+    // Implementar los servicios de Google
+    implementation("com.google.android.gms:play-services-auth:20.7.0")
+    //implementation("com.android.tools.build:gradle:7.4.1")
 }

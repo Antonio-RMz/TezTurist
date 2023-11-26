@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".FragmentTres">
+    tools:context=".fragmentsPrincipales.FragmentTres">
     <LinearLayout
         android:layout_width="match_parent"
         android:orientation="vertical"
@@ -12,7 +12,7 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/textEmail"
+            android:id="@+id/emailTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Holaaa"/>
@@ -20,7 +20,7 @@
 
 
         <Button
-            android:id="@+id/cerrarSesion"
+            android:id="@+id/logoutButton"
             android:text="cerrar sesion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>

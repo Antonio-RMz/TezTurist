@@ -6,7 +6,7 @@
     app:startDestination="@id/page_inicio">
     <fragment
         android:id="@+id/page_inicio"
-        android:name="com.example.tezturist.FragmentUno"
+        android:name="com.example.tezturist.fragmentsPrincipales.FragmentUno"
         tools:layout="@layout/fragment_uno">
 
              <action
@@ -26,11 +26,11 @@
 
     <fragment
         android:id="@+id/page_rutas"
-        android:name="com.example.tezturist.FragmentDos"
+        android:name="com.example.tezturist.fragmentsPrincipales.FragmentDos"
         tools:layout="@layout/fragment_dos"/>
     <fragment
         android:id="@+id/page_configuracion"
-        android:name="com.example.tezturist.FragmentTres"
+        android:name="com.example.tezturist.fragmentsPrincipales.FragmentTres"
         tools:layout="@layout/fragment_tres"/>
 
 
@@ -48,7 +48,7 @@
 
     <activity
         android:id="@+id/activityAtoluca"
-        android:name="com.example.tezturist.ActivityAtoluca"
+        android:name="com.example.tezturist.atoluca.ActivityAtoluca"
         android:label="activity_atoluca"
         tools:layout="@layout/activity_atoluca" />
 

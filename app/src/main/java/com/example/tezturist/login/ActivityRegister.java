@@ -1,21 +1,20 @@
-package com.example.tezturist;
+package com.example.tezturist.login;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.tezturist.MainActivity;
+import com.example.tezturist.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
@@ -44,7 +43,7 @@ public class ActivityRegister extends AppCompatActivity {
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if(currentUser != null){
             //AQUI SE INDICA QUE SI PASO EL LOGEO ACCEDA A LA VENTANA PRINCIPAL (comprobacion de firebase )
-            Intent intent= new Intent(getApplicationContext(),MainActivity.class);
+            Intent intent= new Intent(getApplicationContext(), MainActivity.class);
             startActivity(intent);
             finish();
         }

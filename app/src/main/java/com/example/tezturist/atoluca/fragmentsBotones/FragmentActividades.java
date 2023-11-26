@@ -1,4 +1,4 @@
-package com.example.tezturist;
+package com.example.tezturist.atoluca.fragmentsBotones;
 
 import android.os.Bundle;
 
@@ -10,6 +10,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.tezturist.atoluca.fragmentsBotones.firebaseActividades.MainAdapterAtolucaActividades;
+import com.example.tezturist.atoluca.fragmentsBotones.firebaseActividades.MainModelAtolucaActividades;
+import com.example.tezturist.R;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.FirebaseDatabase;
 

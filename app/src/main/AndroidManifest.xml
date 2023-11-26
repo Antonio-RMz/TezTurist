@@ -15,28 +15,39 @@
         android:theme="@style/Theme.TezTurist"
         tools:targetApi="31">
         <activity
-            android:name=".ActivityRegister"
+            android:name=".MainActivity1"
+            android:exported="false">
+        </activity>
+        <activity
+            android:name=".login1.SignUpActivity1"
+            android:exported="false" />
+        <activity
+            android:name=".login1.ForgotPassword1"
+            android:exported="false" /> <!-- Se tienen que declarar los activitys a los que se van a relacionar -->
+        <activity
+            android:name=".login.ActivityRegister"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="false" />
-
         <activity
-            android:name=".ActivityAtoluca"
+            android:name=".login1.LoginActivity1"
             android:exported="false" />
         <activity
-            android:name=".ImageViewActivity"
+            android:name=".atoluca.ActivityAtoluca"
             android:exported="false" />
         <activity
-            android:name=".ActivityLogin"
+            android:name=".atoluca.carruselAtoluca.ImageViewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".login1.ActivityInicioEfecto"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-
+        </activity> <!-- Para google maps -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/my_map_api_key" />

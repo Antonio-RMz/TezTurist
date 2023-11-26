@@ -1,4 +1,4 @@
-package com.example.tezturist;
+package com.example.tezturist.atoluca.fragmentsBotones.firebaseActividades;
 
 public class MainModelAtolucaActividades {
     String descripcion, imagen,nombre;

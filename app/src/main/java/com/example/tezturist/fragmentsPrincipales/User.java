@@ -1,5 +1,5 @@
 package com.example.tezturist.fragmentsPrincipales;
-
+//clase usada para fragmento tres, quien almacena informacino del usuario
 public class User {
     private String firstName;
     private String lastName;

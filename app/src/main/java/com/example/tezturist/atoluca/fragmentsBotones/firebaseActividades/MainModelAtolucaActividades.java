@@ -6,7 +6,6 @@ public class MainModelAtolucaActividades {
     //este no sé pa que es
 MainModelAtolucaActividades(){
 
-
 }
     public MainModelAtolucaActividades(String descripcion, String imagen, String nombre) {
         this.descripcion = descripcion;

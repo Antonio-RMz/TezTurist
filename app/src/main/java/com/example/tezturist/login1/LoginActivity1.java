@@ -12,6 +12,7 @@ import android.util.Pair;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -35,6 +36,7 @@ public class LoginActivity1 extends AppCompatActivity {
     MaterialButton inicioSesion;
     //elementos para logica de iniciar sesion
     TextInputEditText emailEditText, passwordEditText;
+    ProgressBar progressBar;
     private FirebaseAuth mAuth;
 
     @SuppressLint("WrongViewCast")
@@ -52,6 +54,8 @@ public class LoginActivity1 extends AppCompatActivity {
         inicioSesion = findViewById(R.id.inicioSesion);
         nuevoUsuario = findViewById(R.id.nuevoUsuario);
         olvidasteContrasena = findViewById(R.id.olvidasteContra);
+
+        progressBar=findViewById(R.id.circuloProgreso);
 
         //referencias para boton iniciar sesion
 
@@ -105,6 +109,7 @@ public class LoginActivity1 extends AppCompatActivity {
     }
 
     public void validate() {
+        progressBar.setVisibility(View.VISIBLE);
         String email = emailEditText.getText().toString().trim();
         String password = passwordEditText.getText().toString().trim();
 
@@ -116,25 +121,13 @@ public class LoginActivity1 extends AppCompatActivity {
             emailEditText.setError(null);
         }
 
-        //ahora para la contrasenia, debe ser de 8 caracteres
-        if (password.isEmpty() || password.length() < 8) {
-            passwordEditText.setError("Se necesitan mas de 8 caracteres");
-            return;
-
-        } else if (!Pattern.compile("[0-9]").matcher(password).find()) {
-            passwordEditText.setError("Almenos un numero");
-            return;
-        } else {
-            passwordEditText.setError(null);
-        }
-
-
         //metodo que va a mandar los datos a firebase para que se registren
         inicioSesion(email, password);
 
     }
 
     public void inicioSesion(String email, String password) {
+        progressBar.setVisibility(View.VISIBLE);
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override

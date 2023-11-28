@@ -1,119 +1,186 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg_color"
     android:orientation="vertical"
-    android:padding="25dp"
-
     tools:context=".login1.LoginActivity1">
 
-
     <ImageView
-        android:id="@+id/loginImageView"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_gravity="center"
-        android:src="@drawable/img_logopng_teztur"
-        android:transitionName="loginImageTrans" />
+        android:id="@+id/imageCascada"
+        android:layout_width="535dp"
+        android:layout_height="908dp"
+        android:alpha="0.5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.502"
+        app:srcCompat="@drawable/img_cascada_atoluca" />
 
-    <TextView
-        android:id="@+id/bienvenidoLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="2dp"
-        android:layout_marginTop="28dp"
-        android:text="Bienvenido a TezTur"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:transitionName="textTrans" />
-
-    <TextView
-        android:id="@+id/continuarLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="28dp"
-        android:text=" Inicia sesión para continuar"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        android:transitionName="iniciaSesionTextTrans" />
-
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="428dp"
-        android:layout_marginTop="14dp"
-        android:layout_marginBottom="14dp"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.14">
 
-        <!-- TextInputLayout para Email -->
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp"
-            android:id="@+id/usuarioTextFile"
-            android:transitionName="emailInputTextTrans"
-            android:hint="Email" >
+        <ImageView
+            android:id="@+id/loginImageView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="28dp"
+            android:src="@drawable/img_logopng_teztur"
+            android:transitionName="loginImageTrans"
+            app:layout_constraintBottom_toTopOf="@+id/bienvenidoLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/emailEditText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <!-- TextInputLayout para Contraseña -->
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp"
-            android:id="@+id/contraseñaTextFile"
-            android:hint="Contraseña"
-            android:transitionName="passwordInputTextTrans">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/passwordEditText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <!-- Texto de olvido de contraseña -->
         <TextView
-            android:id="@+id/olvidasteContra"
-            android:layout_width="250dp"
+            android:id="@+id/bienvenidoLabel"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:clickable="true"
-            android:focusable="true"
-            android:text="Olvidaste tu contraseña"
-            android:textAlignment="textEnd"
-            android:textSize="20dp" />
+            android:layout_marginBottom="31dp"
+            android:text="Bienvenido a TezTur"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:transitionName="textTrans"
+            app:layout_constraintBottom_toBottomOf="@+id/continuarLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.508"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
 
-        <!-- Botón de inicio de sesión -->
-        <Button
-            android:id="@+id/inicioSesion"
-            style="@style/Widget.Material3.Button.ElevatedButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="70dp"
-            android:text="Iniciar sesión"
-            android:transitionName="buttomSingInTrans"/>
-
-        <!-- Texto para registro de nuevo usuario -->
         <TextView
-            android:id="@+id/nuevoUsuario"
-            android:transitionName="newUserTrans"
-            android:layout_width="250dp"
+            android:id="@+id/continuarLabel"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:clickable="true"
-            android:focusable="true"
-            android:text="¿Eres nuevo? Regístrate"
-            android:textAlignment="center"
-            android:textSize="20dp"
-            android:textStyle="bold" />
-    </LinearLayout>
+            android:layout_marginBottom="8dp"
+            android:text=" Inicia sesión para continuar"
+            android:textSize="15sp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:transitionName="iniciaSesionTextTrans"
+            app:layout_constraintBottom_toTopOf="@+id/card"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent" />
 
-</LinearLayout>
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card"
+            android:layout_width="319dp"
+            android:layout_height="350dp"
+            android:layout_margin="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <!-- Media -->
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="15dp">
+
+
+                    <!-- TextInputLayout para Email -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/usuarioTextFile"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:hint="Email"
+                        android:transitionName="emailInputTextTrans">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/emailEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- TextInputLayout para Contraseña -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/contraseñaTextFile"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:hint="Contraseña"
+                        app:endIconMode="password_toggle"
+                        android:transitionName="passwordInputTextTrans">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/passwordEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textPassword"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Texto de olvido de contraseña -->
+                    <TextView
+                        android:id="@+id/olvidasteContra"
+                        android:layout_width="250dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:layout_marginBottom="20dp"
+                        android:text="¿Olvidaste tu contraseña?"
+                        android:textAlignment="textEnd"
+                        android:textSize="12dp" />
+
+                    <!--circulo para progeso -->
+                    <ProgressBar
+                        android:id="@+id/circuloProgreso"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:visibility="gone"></ProgressBar>
+                    <!-- Botón de inicio de sesión -->
+                    <Button
+                        android:id="@+id/inicioSesion"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="90dp"
+                        android:text="Iniciar sesión"
+                        android:layout_marginBottom="20dp"
+                        android:transitionName="buttomSingInTrans" />
+
+                    <!-- Texto para registro de nuevo usuario -->
+                    <TextView
+                        android:id="@+id/nuevoUsuario"
+                        android:layout_width="190dp"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:text="¿Eres nuevo? Regístrate aquí"
+                        android:textAlignment="center"
+                        android:textSize="12dp"
+                        android:textStyle="bold"
+                        android:transitionName="newUserTrans" />
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -43,8 +43,11 @@ class FragmentUno : Fragment() {
     //Metetodo creado por mi jiji este esta usando el boton de del fragmento uno (inicio) para pasar a un activity
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val b1 = view.findViewById<Button>(R.id.button1)
+        val b1 = view.findViewById<Button>(R.id.btnVerMasAtoluca)
+        val b2 =view.findViewById<Button>(R.id.btnVerMapaAtoluca)
         b1.setOnClickListener { findNavController(view).navigate(R.id.action_page_inicio_to_activityAtoluca) }
+        b2.setOnClickListener { findNavController(view).navigate(R.id.action_page_inicio_to_page_rutas) }
+
 
     }
 

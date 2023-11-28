@@ -81,7 +81,7 @@ public class ActivityInicioEfecto extends AppCompatActivity {
 
             }
 
-        },4000);
+        },2000);
         //fin bloque animacion ejecutar
     }
 }

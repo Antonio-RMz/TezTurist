@@ -1,131 +1,187 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".login1.SignUpActivity1"
     android:orientation="vertical"
-    android:padding="25dp">
+    android:background="@drawable/bg_color">
 
     <ImageView
-        android:id="@+id/singUpImageView"
-        android:transitionName="logoImageTrans"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:src="@drawable/img_logopng_teztur"
-
-        android:layout_gravity="left"/>
-    <TextView
-        android:id="@+id/bienvenidoLabel"
-        android:transitionName="textTrans"
-        android:layout_width="wrap_content"
+        android:id="@+id/imageCascada"
+        android:layout_width="535dp"
         android:layout_height="wrap_content"
-        android:text="Bienvenido"
-        android:layout_marginTop="20dp"
-        android:textSize="20sp"
-        />
-    <TextView
-        android:id="@+id/continuarLabel"
-        android:transitionName="iniciaSesionTextTrans"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Registrate para empezar a usar TezTur"
-        android:textSize="15sp"/>
+        android:alpha="0.5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.502"
+        app:srcCompat="@drawable/img_cascada_atoluca" />
 
-
-    <!--Layout para los elementos del formulario-->
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="14dp"
-        android:layout_marginBottom="14dp"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
 
 
+        <ImageView
+            android:id="@+id/singUpImageView"
+            android:layout_width="92dp"
+            android:layout_height="86dp"
+            android:layout_gravity="left"
+            android:src="@drawable/img_logopng_teztur"
 
-        <!-- TextInputLayout para nombre -->
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/nameTextFile"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Nombre"
-            android:layout_marginBottom="12dp">
+            android:transitionName="logoImageTrans"
+            app:layout_constraintBottom_toTopOf="@+id/bienvenidoLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.131"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
 
-            <com.google.android.material.textfield.TextInputEditText
-
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                />
-        </com.google.android.material.textfield.TextInputLayout>
-        <!-- TextInputLayout para email -->
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/usuarioSingUpTextFile"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp"
-            android:hint="Email"
-            android:transitionName="emailInputTextTrans">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/emailEditText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <!-- TextInputLayout para contrasenia -->
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/contraseñaTextFile"
-            android:hint="Contrasenia"
-            android:transitionName="passwordInputTextTrans"
-            app:passwordToggleEnabled="true"
-            android:layout_marginBottom="12dp">
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:id="@+id/passwordEditText"
-                android:layout_height="wrap_content"
-                android:inputType="textPassword"/>
-        </com.google.android.material.textfield.TextInputLayout>
-
-
-        <!-- TextInputLayout para confirmar contrasenia -->
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/confirmarContraseniaTextFile"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Confirmar contrasenia"
-            app:passwordToggleEnabled="true"
-            android:layout_marginBottom="12dp">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:id="@+id/confirmPasswordEditText"
-                android:layout_height="wrap_content"
-                android:inputType="textPassword"/>
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <Button
-            android:id="@+id/inicioSesion"
-            style="@style/Widget.Material3.Button.ElevatedButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="70dp"
-            android:text="Registrar"
-            android:layout_marginTop="12dp"
-            android:transitionName="buttomSingInTrans"/>
         <TextView
-            android:id="@+id/nuevoUsuario"
-            android:transitionName="newUserTrans"
+            android:id="@+id/bienvenidoLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:clickable="true"
-            android:focusable="true"
-            android:text="¿ya tienes una cuenta? Inicia sesion"
-            android:textAlignment="center"
-            android:textSize="20dp"
-            android:textStyle="bold"/>
-    </LinearLayout>
+            android:text="Bienvenido!"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:transitionName="textTrans"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.134"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.2" />
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/continuarLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Registrate para empezar a usar TezTur"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:textStyle="bold"
+
+            android:transitionName="iniciaSesionTextTrans"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.267"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.274" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card"
+            android:layout_width="338dp"
+            android:layout_height="450dp"
+            android:layout_margin="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/continuarLabel">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="15dp">
+
+                <!-- TextInputLayout para nombre -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/nameTextFile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:hint="Nombre">
+
+                    <com.google.android.material.textfield.TextInputEditText
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </com.google.android.material.textfield.TextInputLayout>
+                <!-- TextInputLayout para email -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/usuarioSingUpTextFile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:hint="Email"
+                    android:transitionName="emailInputTextTrans">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/emailEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- TextInputLayout para contrasenia -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/contraseñaTextFile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:hint="Contrasenia"
+                    android:transitionName="passwordInputTextTrans"
+                    app:passwordToggleEnabled="true">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/passwordEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPassword" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- TextInputLayout para confirmar contrasenia -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/confirmarContraseniaTextFile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:hint="Confirmar contrasenia"
+                    app:passwordToggleEnabled="true">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/confirmPasswordEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPassword" />
+                </com.google.android.material.textfield.TextInputLayout>
+                <!-- Boton para registrar -->
+                <Button
+                    android:id="@+id/inicioSesion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="20dp"
+                    android:text="Registrar"
+                    android:transitionName="buttomSingInTrans" />
+                <!-- text para mandar el login  -->
+                <TextView
+                    android:id="@+id/nuevoUsuario"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:text="¿Ya tienes una cuenta? Inicia sesión"
+                    android:textAlignment="center"
+                    android:textSize="12dp"
+                    android:textStyle="bold"
+                    android:transitionName="newUserTrans" />
+
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

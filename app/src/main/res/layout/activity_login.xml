@@ -31,57 +31,12 @@
         app:layout_constraintVertical_bias="1.0">
 
 
-        <Button
-            android:id="@+id/button"
-            android:layout_width="327dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginEnd="32dp"
-            android:autoText="true"
-            android:background="@drawable/button_rounded"
-            android:onClick="abreActivityPrincipal"
-            android:text="Iniciar sesión"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.883" />
-
-        <TextView
-            android:id="@+id/textView5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="¿No tienes cuenta?"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.474"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button"
-            app:layout_constraintVertical_bias="0.142" />
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Crea una"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.757"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button"
-            app:layout_constraintVertical_bias="0.142" />
-
-
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/card"
-
             android:layout_width="319dp"
             android:layout_height="282dp"
-
             android:layout_margin="8dp"
-            app:layout_constraintBottom_toTopOf="@+id/button"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -94,32 +49,37 @@
                 <!-- Media -->
 
 
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:padding="16dp">
+                    android:padding="15dp">
 
                     <!-- Title, secondary and supporting text -->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:gravity="center"
                         android:layout_marginStart="90dp"
+                        android:gravity="center"
                         android:text="Inicia sesión"
                         android:textAppearance="?attr/textAppearanceTitleMedium" />
+
+
+                    
                     <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
-                        app:endIconMode="clear_text"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        app:endIconMode="clear_text">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/email"
-                            android:hint="Correo electronico"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"/>
+                            android:layout_height="wrap_content"
+                            android:hint="Correo electronico" />
                     </com.google.android.material.textfield.TextInputLayout>
+
+
+
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
@@ -128,34 +88,35 @@
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/contraseña"
-                            android:inputType="textPassword"
-                            android:hint="Contraseña"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"/>
+                            android:layout_height="wrap_content"
+                            android:hint="Contraseña"
+                            android:inputType="textPassword" />
                     </com.google.android.material.textfield.TextInputLayout>
                     <!--Barra de progreso-->
                     <ProgressBar
                         android:id="@+id/circuloProgreso"
-                        android:visibility="gone"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"></ProgressBar>
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"></ProgressBar>
+
                     <Button
                         android:id="@+id/btn_login"
                         android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_marginStart="90dp"
-                        android:text="Inicia sesión"
-                        android:layout_height="wrap_content">
+                        android:text="Inicia sesión">
                         <!-- Contenido del botón -->
                     </Button>
                     <!--texto que manda a iniciar sesion -->
                     <TextView
-                        android:textStyle="bold"
-                        android:textSize="20sp"
-                        android:gravity="center"
                         android:id="@+id/registerNow"
                         android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
                         android:text="Clic para Registrarte "
-                        android:layout_height="wrap_content"/>
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
 
 
                 </LinearLayout>

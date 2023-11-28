@@ -17,6 +17,7 @@ import com.example.tezturist.atoluca.fragmentsBotones.FragmentEventos;
 import com.example.tezturist.atoluca.carruselAtoluca.ImageAdapter;
 import com.example.tezturist.atoluca.carruselAtoluca.ImageViewActivity;
 import com.example.tezturist.R;
+import com.example.tezturist.atoluca.fragmentsBotones.FragmentHistoria;
 import com.example.tezturist.fragmentsPrincipales.FragmentTres;
 
 import java.util.ArrayList;
@@ -74,7 +75,7 @@ public class ActivityAtoluca extends AppCompatActivity {
                 } else if (view.getId() == R.id.btnEventos) {
                     fragment = new FragmentEventos();
                 } else if (view.getId() == R.id.btnHistoria) {
-                    fragment = new FragmentTres();
+                    fragment = new FragmentHistoria();
                 } else {
                     fragment = new FragmentActividades(); // Fragmento predeterminado
                 }

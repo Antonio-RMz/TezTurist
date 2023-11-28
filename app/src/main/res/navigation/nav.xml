@@ -15,6 +15,9 @@
                 <action
                 android:id="@+id/action_page_inicio_to_activityAtoluca"
                 app:destination="@id/activityAtoluca" />
+        <action
+            android:id="@+id/action_page_inicio_to_page_rutas"
+            app:destination="@id/page_rutas" />
 
 
     </fragment>
@@ -27,7 +30,11 @@
     <fragment
         android:id="@+id/page_rutas"
         android:name="com.example.tezturist.fragmentsPrincipales.FragmentDos"
-        tools:layout="@layout/fragment_dos"/>
+        tools:layout="@layout/fragment_dos">
+        <action
+            android:id="@+id/action_page_rutas_to_page_inicio"
+            app:destination="@id/page_inicio" />
+    </fragment>
     <fragment
         android:id="@+id/page_configuracion"
         android:name="com.example.tezturist.fragmentsPrincipales.FragmentTres"

@@ -1,0 +1,7 @@
+Para poder obtener informacion de firebase, informacion de  actividades para atoluca, se necesitan estas dos
+actividades en java MainAdapterAtolucaActividades, MainModelAtolucaActividades
+
+Activity principal de Atoluca que es ActivityAtoluca y
+
+
+fragment_activivades xml es donde esta la lista de los elementos que viene de la base

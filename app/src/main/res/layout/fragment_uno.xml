@@ -79,7 +79,7 @@
                     android:layout_height="194dp"
                     android:contentDescription="Hola aqui vamos aponer una descripcion "
                     android:scaleType="centerCrop"
-                    app:srcCompat="@drawable/img_teziutlan_iglesia" />
+                    app:srcCompat="@drawable/img_cascada_atoluca"/>
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -91,7 +91,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/letter_oleo_bold"
-                        android:text="Teziutlán"
+                        android:text="Atoluca"
                         android:textAppearance="?attr/textAppearanceTitleMedium" />
 
                     <TextView
@@ -99,6 +99,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:text="La perla de la sierra"
+                        android:textStyle="bold"
                         android:textAppearance="?attr/textAppearanceBodyMedium"
                         android:textColor="?android:attr/textColorSecondary" />
 
@@ -111,16 +112,17 @@
                     android:layout_margin="8dp"
                     android:orientation="horizontal">
                     <com.google.android.material.button.MaterialButton
-                        android:id="@+id/button1"
+                        android:id="@+id/btnVerMasAtoluca"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="8dp"
-                        android:text="Ver mas"
+                        android:text="Ver más"
                         style="?attr/borderlessButtonStyle" />
                     <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnVerMapaAtoluca"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="siguiente texto"
+                        android:text="Ver mapa"
                         style="?attr/borderlessButtonStyle" />
                 </LinearLayout>
 
@@ -145,7 +147,7 @@
                     android:layout_height="194dp"
                     android:contentDescription="Hola aqui vamos aponer una descripcion "
                     android:scaleType="centerCrop"
-                    app:srcCompat="@drawable/img_cascada_atoluca" />
+                    app:srcCompat="@drawable/img_teziutlan_iglesia" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -157,22 +159,14 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Atoluca "
+                        android:text="Teziutlán "
                         android:textAppearance="?attr/textAppearanceTitleMedium"
                         />
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="Texto numero dos en la imagen "
-                        android:textAppearance="?attr/textAppearanceBodyMedium"
-                        android:textColor="?android:attr/textColorSecondary"
-                        />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
-                        android:text="texto numero tres en la imagen "
+                        android:text="Caminar por sus calles es viajar en el tiempo, un viaje mágico que todos deberían experimentar."
                         android:textAppearance="?attr/textAppearanceBodyMedium"
                         android:textColor="?android:attr/textColorSecondary"
                         />
@@ -190,12 +184,12 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="8dp"
-                        android:text="Ver mas"
+                        android:text="Ver más"
                         style="?attr/borderlessButtonStyle" />
                     <com.google.android.material.button.MaterialButton
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="siguiente texto"
+                        android:text="Ver mapa"
                         style="?attr/borderlessButtonStyle" />
                 </LinearLayout>
 
@@ -234,22 +228,15 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Mexcal "
+                    android:text="Mexcalcuautla "
                     android:textAppearance="?attr/textAppearanceTitleMedium"
                     />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="Texto numero dos en la imagen "
-                    android:textAppearance="?attr/textAppearanceBodyMedium"
-                    android:textColor="?android:attr/textColorSecondary"
-                    />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    android:text="texto numero tres en la imagen "
+                    android:text="Aquí, el tiempo se mide en sonrisas y la magia se encuentra en cada rincón pintoresco. "
                     android:textAppearance="?attr/textAppearanceBodyMedium"
                     android:textColor="?android:attr/textColorSecondary"
                     />
@@ -267,12 +254,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="8dp"
-                    android:text="Ver mas"
+                    android:text="Ver más"
                     style="?attr/borderlessButtonStyle" />
                 <com.google.android.material.button.MaterialButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="siguiente texto"
+                    android:text="Ver mapa"
                     style="?attr/borderlessButtonStyle" />
             </LinearLayout>
 
@@ -309,14 +296,14 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Texto en la imagen "
+                    android:text="San Diego"
                     android:textAppearance="?attr/textAppearanceTitleMedium"
                     />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="Texto numero dos en la imagen "
+                    android:text="Descubre la magia de pertenecer, donde cada individuo es una pieza esencial en el rompecabezas comunitario"
                     android:textAppearance="?attr/textAppearanceBodyMedium"
                     android:textColor="?android:attr/textColorSecondary"
                     />
@@ -342,12 +329,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="8dp"
-                    android:text="Ver mas"
+                    android:text="Ver más"
                     style="?attr/borderlessButtonStyle" />
                 <com.google.android.material.button.MaterialButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="siguiente texto"
+                    android:text="Ver mapa"
                     style="?attr/borderlessButtonStyle" />
             </LinearLayout>
 
@@ -379,30 +366,24 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:padding="16dp">
+                    <!-- Title, secondary and supporting text -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="San Sebastián "
+                        android:textAppearance="?attr/textAppearanceTitleMedium"
+                        />
 
                     <!-- Title, secondary and supporting text -->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Texto en la imagen "
-                        android:textAppearance="?attr/textAppearanceTitleMedium"
-                        />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="Texto numero dos en la imagen "
+                        android:text="Entre montañas que guardan secretos y plazas que susurran historias, descubre la auténtica magia de nuestro pueblo mágico"
                         android:textAppearance="?attr/textAppearanceBodyMedium"
                         android:textColor="?android:attr/textColorSecondary"
                         />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:text="texto numero tres en la imagen "
-                        android:textAppearance="?attr/textAppearanceBodyMedium"
-                        android:textColor="?android:attr/textColorSecondary"
-                        />
+
+
 
                 </LinearLayout>
 
@@ -422,7 +403,7 @@
                     <com.google.android.material.button.MaterialButton
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="siguiente texto"
+                        android:text="Ver mapa"
                         style="?attr/borderlessButtonStyle" />
                 </LinearLayout>
 
@@ -445,7 +426,6 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="194dp"
-                    android:contentDescription="Hola aqui vamos aponer una descripcion "
                     android:scaleType="centerCrop"
                     app:srcCompat="@drawable/img_toritonoche_acateno" />
 
@@ -459,25 +439,18 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Texto en la imagen "
+                        android:text="San Juan Acateno"
                         android:textAppearance="?attr/textAppearanceTitleMedium"
                         />
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:text="Texto numero dos en la imagen "
+                        android:text="Bajo cielos estrellados y entre aromas de tradición, se teje la magia de un auténtico pueblo mágico. "
                         android:textAppearance="?attr/textAppearanceBodyMedium"
                         android:textColor="?android:attr/textColorSecondary"
                         />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:text="texto numero tres en la imagen "
-                        android:textAppearance="?attr/textAppearanceBodyMedium"
-                        android:textColor="?android:attr/textColorSecondary"
-                        />
+
 
                 </LinearLayout>
 

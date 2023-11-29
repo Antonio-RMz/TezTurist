@@ -5,5 +5,5 @@
     <string name="title_activity_maps">MapsActivity</string>
     <!--Api generada de google cloud-->
     <string name="my_map_api_key">AIzaSyBWZmcqCSVbApK7vyN8hGkGkXYB_hT80sg</string>
-
+<string name="web_client_id">987648083950-p9pr95t8gq8nmk336e9qpp3eii3qusfk.apps.googleusercontent.com</string>
 </resources>

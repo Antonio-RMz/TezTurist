@@ -19,13 +19,22 @@ import android.widget.Toast;
 import com.example.tezturist.MainActivity;
 import com.example.tezturist.MainActivity1;
 import com.example.tezturist.R;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.SignInButton;
+import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.GoogleAuthCredential;
+import com.google.firebase.auth.GoogleAuthProvider;
 
 import java.util.regex.Pattern;
 
@@ -38,6 +47,12 @@ public class LoginActivity1 extends AppCompatActivity {
     TextInputEditText emailEditText, passwordEditText;
     ProgressBar progressBar;
     private FirebaseAuth mAuth;
+
+//para logeo con google
+
+    SignInButton signInButton;
+    GoogleSignInClient mGoogleSignInClient;
+    public static final int RC_SIGN_IN = 0;
 
     @SuppressLint("WrongViewCast")
     @Override
@@ -55,7 +70,7 @@ public class LoginActivity1 extends AppCompatActivity {
         nuevoUsuario = findViewById(R.id.nuevoUsuario);
         olvidasteContrasena = findViewById(R.id.olvidasteContra);
 
-        progressBar=findViewById(R.id.circuloProgreso);
+        progressBar = findViewById(R.id.circuloProgreso);
 
         //referencias para boton iniciar sesion
 
@@ -106,6 +121,67 @@ public class LoginActivity1 extends AppCompatActivity {
                 validate();//validar si es un correo valido y validar contrase;a
             }
         });
+
+
+        signInButton = findViewById(R.id.loginGoogle);
+        signInButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                signInWithGoogle();
+            }
+        });
+
+
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken(getString(R.string.web_client_id))
+                .requestEmail()
+                .build();
+
+        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
+
+    }
+
+    //metodo para autenticacion con google
+    private void signInWithGoogle() {
+//llamar al dialogo que sale cuando precionamos btn google
+        Intent singnInIntent = mGoogleSignInClient.getSignInIntent();
+        startActivityForResult(singnInIntent, RC_SIGN_IN);
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == RC_SIGN_IN) {
+            Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
+            try {
+                GoogleSignInAccount account = task.getResult(ApiException.class);
+                firebaseAuthWithGoogle(account.getIdToken());
+            } catch (ApiException e) {
+                Toast.makeText(LoginActivity1.this, "Fallo inicio con Google", Toast.LENGTH_SHORT).show();
+
+            }
+        }
+
+    }
+
+
+    //cuando se cierre el dialogo se debe almacenar un token, aqui
+    public void firebaseAuthWithGoogle(String idToken) {
+        AuthCredential credential = GoogleAuthProvider.getCredential(idToken, null);
+        mAuth.signInWithCredential(credential)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            Intent intent = new Intent(LoginActivity1.this, MainActivity1.class);
+                            startActivity(intent);
+                            finish();
+                        }else {
+                            Toast.makeText(LoginActivity1.this, "Fallo en iniciar sesión", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+
     }
 
     public void validate() {
@@ -143,5 +219,34 @@ public class LoginActivity1 extends AppCompatActivity {
                     }
                 });
     }
+
+
+    private void signOut() {
+        FirebaseAuth.getInstance().signOut();
+
+        // Revocar el acceso a la cuenta de Google
+        mGoogleSignInClient.signOut().addOnCompleteListener(this, new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                // Limpiar las credenciales almacenadas
+                mGoogleSignInClient.revokeAccess().addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        // Acciones adicionales después de cerrar sesión y revocar el acceso
+                        // Por ejemplo, redirigir a la pantalla de inicio de sesión
+                        redirectToLoginScreen();
+                    }
+                });
+            }
+        });
+    }
+
+    private void redirectToLoginScreen() {
+        // Puedes redirigir a la pantalla de inicio de sesión aquí
+        Intent intent = new Intent(LoginActivity1.this, LoginActivity1.class);
+        startActivity(intent);
+        finish(); // Cierra la actividad actual para evitar volver atrás
+    }
+
 
 }

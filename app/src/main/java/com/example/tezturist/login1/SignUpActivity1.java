@@ -87,7 +87,7 @@ public class SignUpActivity1 extends AppCompatActivity {
 
         //ahora para la contrasenia, debe ser de 8 caracteres
         if (password.isEmpty() || password.length() < 8) {
-            passwordEditText.setError("Se necesitan mas de 8 caracteres");
+            passwordEditText.setError("Se necesitan más de 8 carácteres");
             return;
 
         } else if (!Pattern.compile("[0-9]").matcher(password).find()) {

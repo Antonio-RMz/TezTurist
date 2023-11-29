@@ -18,6 +18,8 @@ import android.widget.TextView;
 import com.example.tezturist.MainActivity;
 import com.example.tezturist.MainActivity1;
 import com.example.tezturist.R;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -52,11 +54,14 @@ public class ActivityInicioEfecto extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             //despues de que pasaron los 4 segundos de la animacion
 
+            //para logeo co google validar si ya inicio sesio o no, para llevarlo al proceso principal
+            GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(ActivityInicioEfecto.this);
+
             @Override
             public void run() {
                 //si el usuario ya inicio sesion se va hacia el userACtiviti y si no se manda al login
                 FirebaseUser user= FirebaseAuth.getInstance().getCurrentUser(); //
-                if (user!= null){
+                if (user!= null && account != null){
                     Intent intent = new Intent(ActivityInicioEfecto.this, MainActivity1.class);
                     startActivity(intent);
                     finish();

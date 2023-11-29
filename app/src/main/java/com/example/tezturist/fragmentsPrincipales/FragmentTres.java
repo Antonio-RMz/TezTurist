@@ -24,6 +24,11 @@ import androidx.fragment.app.Fragment;
 
 import com.example.tezturist.R;
 import com.example.tezturist.login1.LoginActivity1;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.button.MaterialButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -115,16 +120,29 @@ public class FragmentTres extends Fragment {
                     startActivityForResult(intent, PICK_IMAGE_REQUEST);
                 }
             });
-
+//boton cierre de sesion con firebase y google
             logoutButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    // Cerrar sesión con Firebase (correo)
                     FirebaseAuth.getInstance().signOut();
-                    Intent intent = new Intent(getActivity(), LoginActivity1.class);
-                    startActivity(intent);
-                    getActivity().finish();
+
+                    // Cerrar sesión con Google
+                    GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                            .build();
+                    GoogleSignInClient googleSignInClient = GoogleSignIn.getClient(getActivity(), gso);
+                    googleSignInClient.signOut().addOnCompleteListener(getActivity(), new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            // Después de cerrar sesión con Firebase y Google, redirige a la pantalla de inicio de sesión
+                            Intent intent = new Intent(getActivity(), LoginActivity1.class);
+                            startActivity(intent);
+                            getActivity().finish();
+                        }
+                    });
                 }
             });
+
         }
 
         return view;

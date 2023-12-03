@@ -1,16 +1,20 @@
 package com.example.tezturist.atoluca.fragmentsBotones.firebaseActividades;
 
+import java.util.Map;
+
 public class MainModelAtolucaActividades {
-    String descripcion, imagen,nombre;
+    String descripcion, imagen, nombre;
 
-    //este no sé pa que es
-MainModelAtolucaActividades(){
 
-}
+    // Constructor por defecto
+    MainModelAtolucaActividades() {
+    }
+
     public MainModelAtolucaActividades(String descripcion, String imagen, String nombre) {
         this.descripcion = descripcion;
         this.imagen = imagen;
         this.nombre = nombre;
+        ;
     }
 
     public String getDescripcion() {
@@ -36,4 +40,7 @@ MainModelAtolucaActividades(){
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+
+
 }
+

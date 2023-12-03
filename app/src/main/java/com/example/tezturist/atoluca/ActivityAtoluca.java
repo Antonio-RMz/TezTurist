@@ -1,6 +1,5 @@
 package com.example.tezturist.atoluca;
-//clase para el carrusel, son tres en total
-//clase que le da funcionalidad a los botones que cambian de fragmento
+
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -10,6 +9,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 
 import com.example.tezturist.atoluca.fragmentsBotones.FragmentActividades;
@@ -24,10 +24,15 @@ import java.util.ArrayList;
 
 public class ActivityAtoluca extends AppCompatActivity {
 
+
+
+    CheckBox checkBox;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_atoluca);
+
+
 
         RecyclerView recyclerView = findViewById(R.id.recycler);
         ArrayList<String> arrayList = new ArrayList<>();

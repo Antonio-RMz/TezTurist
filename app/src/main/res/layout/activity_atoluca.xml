@@ -1,178 +1,180 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".atoluca.ActivityAtoluca">
 
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-<!--barra de arriba-->
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-            <View
-                android:id="@+id/view"
+            <!-- Barra superior -->
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <View
+                    android:id="@+id/view"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:background="@drawable/bg_view"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="109dp"
+                    android:layout_height="96dp"
+                    android:src="@drawable/img_logo_teztur"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/view"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/view"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <ImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="96dp"
+                    android:layout_height="83dp"
+                    android:src="@drawable/img_logo_blanco"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.868"
+                    app:layout_constraintStart_toEndOf="@+id/imageView4"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Nombre del lugar -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_atoluca2"
+                android:layout_width="411dp"
                 android:layout_height="100dp"
-                android:background="@drawable/bg_view"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:layout_marginTop="-20dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="40dp">
 
-            <ImageView
-                android:id="@+id/imageView4"
-                android:layout_width="109dp"
-                android:layout_height="96dp"
-                android:src="@drawable/img_logo_teztur"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/view"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/view"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0" />
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="1dp"
+                    android:alpha="0.5"
+                    android:contentDescription="Hola, aquí vamos a poner una descripción"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/img_cascada_atoluca" />
 
-            <ImageView
-                android:id="@+id/imageView5"
-                android:layout_width="96dp"
-                android:layout_height="83dp"
-                android:src="@drawable/img_logo_blanco"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.868"
-                app:layout_constraintStart_toEndOf="@+id/imageView4"
-                app:layout_constraintTop_toTopOf="parent" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="31dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="45dp"
+                    android:alpha="0.7"
+                    android:background="@color/white"
+                    android:backgroundTint="@color/md_theme_dark_onTertiary"
+                    android:orientation="horizontal">
+                    <!-- Aquí puedes agregar más elementos al LinearLayout si es necesario -->
+                </LinearLayout>
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="126dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="160dp"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginEnd="302dp"
+                    android:layout_marginBottom="505dp"
+                    android:fontFamily="@font/letter_oleo_bold"
+                    android:text="Atoluca"
+                    android:textColor="@color/md_theme_dark_onSecondaryContainer"
+                    android:textSize="26sp" />
+            </com.google.android.material.card.MaterialCardView>
 
-        <!--nombre del lugar-->
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/card_atoluca2"
-            android:layout_width="411dp"
-            android:layout_height="100dp"
-            android:layout_marginTop="-20dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="40dp">
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="1dp"
-                android:alpha="0.5"
-                android:contentDescription="Hola, aquí vamos a poner una descripción"
-                android:scaleType="centerCrop"
-                app:srcCompat="@drawable/img_cascada_atoluca" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="31dp"
-                android:layout_centerInParent="true"
-                android:layout_marginTop="45dp"
-                android:alpha="0.7"
-                android:background="@color/white"
-                android:backgroundTint="@color/md_theme_dark_onTertiary"
-                android:orientation="horizontal">
-
-                <!-- Aquí puedes agregar más elementos al LinearLayout si es necesario -->
-
-            </LinearLayout>
-
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="126dp"
-                android:layout_height="40dp"
-                android:layout_marginStart="160dp"
-                android:layout_marginTop="40dp"
-                android:layout_marginEnd="302dp"
-                android:layout_marginBottom="505dp"
-                android:fontFamily="@font/letter_oleo_bold"
-                android:text="Atoluca"
-                android:textColor="@color/md_theme_dark_onSecondaryContainer"
-                android:textSize="26sp" />
-
-        </com.google.android.material.card.MaterialCardView>
-        <!--creo que va dentro va dentro de un RecyclerView-->
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="match_parent"
-            android:layout_marginStart="20dp"
-            android:textStyle="bold"
-            android:layout_height="wrap_content"
-            android:text="Galeria" />
-        <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler"
-        android:layout_width="379dp"
-        android:layout_height="222dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginEnd="12dp"
-        android:layout_marginBottom="20dp"
-        android:orientation="horizontal"
-        app:layoutManager="com.google.android.material.carousel.CarouselLayoutManager" />
-
-
-        <com.google.android.material.button.MaterialButtonToggleGroup
-            android:id="@+id/toggleButton"
-            android:layout_width="366dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="1dp"
-            android:layout_marginBottom="2dp">
-
+            <!-- Botón para consultar el clima -->
             <Button
-                android:id="@+id/btnActividades"
-                style="@style/Widget.Material3.Button.ElevatedButton"
+                style="?attr/materialButtonOutlinedStyle"
+                android:id="@+id/btnClimaAtoluca"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Actividades"
-                android:textSize="8sp"
-                app:icon="@drawable/correr" />
+                app:icon="@drawable/icon_clima"
+                android:text=" Consultar clima " />
 
-            <Button
-                android:id="@+id/btnEventos"
-                style="@style/Widget.Material3.Button.ElevatedButton"
-                android:layout_width="103dp"
+            <!-- Título de la galería -->
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_marginStart="20dp"
+                android:textStyle="bold"
                 android:layout_height="wrap_content"
-                android:text="Eventos"
-                android:textSize="8sp"
-                app:icon="@drawable/estrella_del_calendario" />
+                android:text="Galeria" />
 
-            <Button
-                android:id="@+id/btnHistoria"
-                style="@style/Widget.Material3.Button.ElevatedButton"
-                android:layout_width="130dp"
+            <!-- RecyclerView para la galería -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler"
+                android:layout_width="379dp"
+                android:layout_height="222dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="12dp"
+                android:layout_marginBottom="20dp"
+                android:orientation="horizontal"
+                app:layoutManager="com.google.android.material.carousel.CarouselLayoutManager" />
+
+            <!-- Botones de categorías -->
+            <com.google.android.material.button.MaterialButtonToggleGroup
+                android:id="@+id/toggleButton"
+                android:layout_width="366dp"
                 android:layout_height="wrap_content"
-                android:text="Historia"
-                android:textSize="8sp"
-                app:icon="@drawable/tiempo_pasado" />
-        </com.google.android.material.button.MaterialButtonToggleGroup>
-<!--Este sera el fragmento que estara cambiando dependiendo el boton que se seleccione-->
-        <FrameLayout
-            android:id="@+id/fragmentContainer"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@id/toggleButton"
-            android:layout_marginTop="8dp">
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginBottom="2dp">
 
+                <Button
+                    android:id="@+id/btnActividades"
+                    style="@style/Widget.Material3.Button.ElevatedButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Actividades"
+                    android:textSize="8sp"
+                    app:icon="@drawable/correr" />
 
-        </FrameLayout>
+                <Button
+                    android:id="@+id/btnEventos"
+                    style="@style/Widget.Material3.Button.ElevatedButton"
+                    android:layout_width="103dp"
+                    android:layout_height="wrap_content"
+                    android:text="Eventos"
+                    android:textSize="8sp"
+                    app:icon="@drawable/estrella_del_calendario" />
 
-        <!--Aqui iria el boton para mandar al mapa-->
+                <Button
+                    android:id="@+id/btnHistoria"
+                    style="@style/Widget.Material3.Button.ElevatedButton"
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
+                    android:text="Historia"
+                    android:textSize="8sp"
+                    app:icon="@drawable/tiempo_pasado" />
+            </com.google.android.material.button.MaterialButtonToggleGroup>
 
-
-
-    </LinearLayout>
-
+            <!-- Fragment Container -->
+            <FrameLayout
+                android:id="@+id/fragmentContainer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/toggleButton"
+                android:layout_marginTop="8dp">
+            </FrameLayout>
+        </LinearLayout>
     </ScrollView>
 </RelativeLayout>

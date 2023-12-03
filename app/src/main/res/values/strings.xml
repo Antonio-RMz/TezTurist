@@ -6,4 +6,20 @@
     <!--Api generada de google cloud-->
     <string name="my_map_api_key">AIzaSyBWZmcqCSVbApK7vyN8hGkGkXYB_hT80sg</string>
     <string name="web_client_id">987648083950-p9pr95t8gq8nmk336e9qpp3eii3qusfk.apps.googleusercontent.com</string>
+
+
+
+    <string name="app_name2">Clima</string>
+    <string name="rain">Presión</string>
+    <string name="description">test</string>
+    <string name="radius">°</string>
+    <string name="weatherForTommorow">Clima para los próximos dias:</string>
+    <string name="time">Tiempo</string>
+    <string name="empty"> </string>
+    <string name="city">City: </string>
+    <string name="country">Country: </string>
+    <string name="done">Done</string>
+
+
+    <string name="light_rain">Lluvia ligera</string>
 </resources>

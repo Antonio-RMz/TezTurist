@@ -4,6 +4,17 @@
     <color name="azulBtn">#3DA4AB</color>
     <color name="colorAccent">#3DA4AB</color>
 
+    <color name="black">#FF000000</color>
+
+    <color name="greyWhite">#C3C1C1</color>
+    <color name="violet">#A5B9BC</color>
+    <color name="darkViolet">#22767B</color>
+    <color name="gold">#E6AC02</color>
+    <color name="transparent">#00FFFFFF</color>
+    <color name="back">#5F4C83</color>
+    <color name="radius1">#65533D7E</color>
+    <color name="radius2">#A1584A70</color>
+
 
     <color name="md_theme_light_primary">#006A63</color>
     <color name="md_theme_light_onPrimary">#FFFFFF</color>

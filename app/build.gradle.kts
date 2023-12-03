@@ -91,4 +91,11 @@ dependencies {
     // Implementar los servicios de Google
     implementation("com.google.android.gms:play-services-auth:20.7.0")
     //implementation("com.android.tools.build:gradle:7.4.1")
+
+    //imagenes de clima
+    implementation ("com.squareup.picasso:picasso:2.71828")
+    
+
+
+
 }

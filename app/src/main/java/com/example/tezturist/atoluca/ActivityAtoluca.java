@@ -18,6 +18,8 @@ import com.example.tezturist.atoluca.carruselAtoluca.ImageAdapter;
 import com.example.tezturist.atoluca.carruselAtoluca.ImageViewActivity;
 import com.example.tezturist.R;
 import com.example.tezturist.atoluca.fragmentsBotones.FragmentHistoria;
+import com.example.tezturist.clima.ActivityLugares;
+import com.example.tezturist.clima.MainWeather;
 import com.example.tezturist.fragmentsPrincipales.FragmentTres;
 
 import java.util.ArrayList;
@@ -31,8 +33,16 @@ public class ActivityAtoluca extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_atoluca);
+        //boton para abrir el clima
+        Button btnClimaAtoluca = findViewById(R.id.btnClimaAtoluca);
 
 
+        btnClimaAtoluca.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                abrirMainWeather(19.9631125, -97.2328597);
+            }
+        });
 
         RecyclerView recyclerView = findViewById(R.id.recycler);
         ArrayList<String> arrayList = new ArrayList<>();
@@ -95,5 +105,14 @@ public class ActivityAtoluca extends AppCompatActivity {
         buttonActividades.setOnClickListener(buttonClickListener);
         buttonEventos.setOnClickListener(buttonClickListener);
         buttonHistoria.setOnClickListener(buttonClickListener);
+    }
+
+
+
+    private void abrirMainWeather(double latitude, double longitude) {
+        Intent intent = new Intent(ActivityAtoluca.this, MainWeather.class);
+        intent.putExtra("latitude", latitude);
+        intent.putExtra("longitude", longitude);
+        startActivity(intent);
     }
 }

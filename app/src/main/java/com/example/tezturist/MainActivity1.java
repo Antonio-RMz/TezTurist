@@ -18,6 +18,8 @@ public class MainActivity1 extends AppCompatActivity {
         setContentView(R.layout.activity_main1);
         setupNavegacion();
 
+
+
     }
 
 

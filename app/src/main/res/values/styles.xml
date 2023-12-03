@@ -79,4 +79,22 @@
     <item name="android:layout_height">120dp</item>
     <item name="android:layout_marginEnd">53dp</item>
 </style>
+
+
+
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Otros atributos del tema -->
+        <item name="toolbarStyle">@style/NoTitleTextToolbar</item>
+    </style>
+
+    <style name="NoTitleTextToolbar" parent="Widget.AppCompat.Toolbar">
+        <item name="android:titleTextAppearance">@style/NoTitleTextAppearance</item>
+    </style>
+
+    <style name="NoTitleTextAppearance">
+        <item name="android:textSize">0sp</item>
+    </style>
+
+
 </resources>

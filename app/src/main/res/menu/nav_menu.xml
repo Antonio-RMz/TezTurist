@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn = "navigation_view">
+
+    <group
+        android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_inicio"
+            android:icon="@drawable/icon_inicio"
+            android:title="Inicio"/>
+
+        <item
+            android:id="@+id/nav_configuracion"
+            android:icon="@drawable/icon_configuracion"
+            android:title="Rutas"/>
+
+        <item
+            android:id="@+id/nav_favoritos"
+            android:icon="@drawable/icon_favoritos"
+            android:title="Favoritos"/>
+
+        <item
+            android:id="@+id/nav_ajustes"
+            android:icon="@drawable/icon_ajustes"
+            android:title="Ajustes"/>
+
+        <item
+            android:id="@+id/nav_compartir"
+            android:icon="@drawable/icon_compartir"
+            android:title="Compartir"/>
+    </group>
+    <item
+        android:title="">
+
+        <menu>
+            <item
+                android:id="@+id/nav_cerrar"
+                android:icon="@drawable/icon_cerrarsesion"
+                android:title="Cerrar sesión"/>
+        </menu>
+
+    </item>
+
+</menu>

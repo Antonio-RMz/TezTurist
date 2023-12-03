@@ -1,12 +1,17 @@
 package com.example.tezturist.atoluca;
 
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -21,13 +26,14 @@ import com.example.tezturist.atoluca.fragmentsBotones.FragmentHistoria;
 import com.example.tezturist.clima.ActivityLugares;
 import com.example.tezturist.clima.MainWeather;
 import com.example.tezturist.fragmentsPrincipales.FragmentTres;
+import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
 
-public class ActivityAtoluca extends AppCompatActivity {
+public class ActivityAtoluca extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
 
-
+    private DrawerLayout drawerLayout;
     CheckBox checkBox;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +42,7 @@ public class ActivityAtoluca extends AppCompatActivity {
         //boton para abrir el clima
         Button btnClimaAtoluca = findViewById(R.id.btnClimaAtoluca);
 
-
+//accion boton coordenadas para el clima
         btnClimaAtoluca.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -105,14 +111,36 @@ public class ActivityAtoluca extends AppCompatActivity {
         buttonActividades.setOnClickListener(buttonClickListener);
         buttonEventos.setOnClickListener(buttonClickListener);
         buttonHistoria.setOnClickListener(buttonClickListener);
+
+
+        ///1 para la barra lateral atoluca
+        Toolbar toolbar = findViewById(R.id.toolbar); //Ignore red line errors
+        setSupportActionBar(toolbar);
+
+        drawerLayout = findViewById(R.id.drawer_layout);
+        NavigationView navigationView = findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.open_nav,
+                R.string.close_nav);
+        drawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
+
+
+
     }
 
-
+//metodo para mandar los parametos del clima de atoluca
 
     private void abrirMainWeather(double latitude, double longitude) {
         Intent intent = new Intent(ActivityAtoluca.this, MainWeather.class);
         intent.putExtra("latitude", latitude);
         intent.putExtra("longitude", longitude);
         startActivity(intent);
+    }
+//2 metodo para la barra lateral atoluca
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        return false;
     }
 }

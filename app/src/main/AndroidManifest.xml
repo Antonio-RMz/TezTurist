@@ -7,8 +7,6 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
-
-
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -20,6 +18,9 @@
         android:theme="@style/Theme.TezTurist"
         tools:targetApi="31">
         <activity
+            android:name=".barraLateral.ActivityBarrateral"
+            android:exported="false" />
+        <activity
             android:name=".teziutlan.ActivityTeziutlan"
             android:exported="false" />
         <activity
@@ -27,7 +28,8 @@
             android:exported="false" />
         <activity
             android:name=".atoluca.ActivityAtoluca"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.TezTurist"/>
         <activity
             android:name=".login1.SignUpActivity1"
             android:exported="false" />
@@ -43,26 +45,18 @@
         <activity
             android:name=".MainActivity1"
             android:exported="false" />
-
         <activity
             android:name=".atoluca.carruselAtoluca.ImageViewActivity"
             android:exported="false" />
-
-
-
         <activity
             android:name=".clima.MainWeather"
             android:exported="false" />
-
         <activity
             android:name=".clima.MainWeatherNext"
             android:exported="false" />
-
         <activity
             android:name=".clima.ActivityLugares"
             android:exported="false" />
-
-
         <activity
             android:name=".login1.ActivityInicioEfecto"
             android:exported="true">
@@ -71,10 +65,6 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
-
-
-
         </activity> <!-- Para google maps -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"

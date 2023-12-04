@@ -37,6 +37,9 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.squareup.picasso.Picasso;
 
 import java.io.IOException;
 
@@ -48,9 +51,17 @@ public class FragmentTres extends Fragment {
     private MaterialButton logoutButton;
     EditText firstNameEditText, lastNameEditText, middleNameEditText;
     MaterialButton guardarButton, actualizarButton, cambiarImgButton;
-    DatabaseReference userReference;
+
+
+    ///para imagen firebase storage
     private static final int PICK_IMAGE_REQUEST = 1;
     private ImageView imageView;
+    private DatabaseReference userReference;
+    private FirebaseStorage storage;
+    private StorageReference storageReference;
+
+
+
 
     @Nullable
     @Override
@@ -142,8 +153,20 @@ public class FragmentTres extends Fragment {
                     });
                 }
             });
-
+            //accion para cambiar imagen
+            cambiarImgButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(Intent.ACTION_PICK);
+                    intent.setType("image/*");
+                    startActivityForResult(intent, PICK_IMAGE_REQUEST);
+                }
+            });
         }
+
+        // Inicializar Firebase Storage
+        storage = FirebaseStorage.getInstance();
+        storageReference = storage.getReference();
 
         return view;
     }
@@ -157,6 +180,8 @@ public class FragmentTres extends Fragment {
         userReference.setValue(user);
     }
 
+
+    //cuando se carga la informacion del usuario
     private void loadUserInfo() {
         userReference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -167,16 +192,26 @@ public class FragmentTres extends Fragment {
                         firstNameEditText.setText(user.getFirstName());
                         lastNameEditText.setText(user.getLastName());
                         middleNameEditText.setText(user.getMiddleName());
+
+                        // Aquí se asume que tienes un método getImageUrl() en tu clase User
+                        String imageUrl = user.getImageUrl();
+                        if (imageUrl != null && !imageUrl.isEmpty()) {
+                            // Utiliza alguna biblioteca de carga de imágenes (por ejemplo, Picasso o Glide)
+                            // para cargar la imagen desde la URL en CircleImageView
+                            // Puedes ajustar esta parte según la biblioteca que estés utilizando
+                            Picasso.get().load(imageUrl).into(imageView);
+                        }
                     }
                 }
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                // Manejar errores de lectura
+                // se manejan errores de lectura
             }
         });
     }
+
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -184,11 +219,13 @@ public class FragmentTres extends Fragment {
 
         if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.getData() != null) {
             Uri selectedImageUri = data.getData();
-            showToast("Imagen nueva");
 
             try {
                 Bitmap bitmap = MediaStore.Images.Media.getBitmap(getActivity().getContentResolver(), selectedImageUri);
                 imageView.setImageBitmap(bitmap);
+
+                // Subir la imagen a Firebase Storage
+                uploadImageToFirebaseStorage(selectedImageUri);
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -197,5 +234,31 @@ public class FragmentTres extends Fragment {
 
     private void showToast(String message) {
         Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
+    }
+
+
+    //imagen para usuario
+    private void uploadImageToFirebaseStorage(Uri uri) {
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user != null) {
+            // Crear una referencia única para la imagen
+            String imageName = "profile_images/" + user.getUid() + ".jpg";
+            StorageReference imageRef = storageReference.child(imageName);
+
+            // Subir la imagen al Storage
+            imageRef.putFile(uri)
+                    .addOnSuccessListener(taskSnapshot -> {
+                        // Obtiene la URL de la imagen después de subirla con éxito
+                        imageRef.getDownloadUrl().addOnSuccessListener(uri1 -> {
+                            // Aquí puedes guardar la URL en la base de datos de Firebase Realtime Database o Firestore
+                            String imageUrl = uri1.toString();
+                            userReference.child("imageUrl").setValue(imageUrl);
+                        });
+                    })
+                    .addOnFailureListener(e -> {
+                        // Maneja errores de carga de imagen
+                        showToast("Error al subir la imagen");
+                    });
+        }
     }
 }

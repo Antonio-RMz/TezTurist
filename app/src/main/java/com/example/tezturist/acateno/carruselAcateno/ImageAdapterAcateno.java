@@ -1,5 +1,4 @@
-package com.example.tezturist.atoluca.carruselAtoluca;
-//clase para el carrusel, y en la carpeta layout ---image_list_item, activity_atoluca, activity_image_view
+package com.example.tezturist.acateno.carruselAcateno;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,27 +11,31 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.tezturist.R;
 
+
+
 import java.util.ArrayList;
 
-public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ViewHolder> {
+public class ImageAdapterAcateno extends RecyclerView.Adapter<ImageAdapterAcateno.ViewHolder> {
+
     Context context;
     ArrayList<String> arrayList;
-    OnItemClickListener onItemClickListener;
-
-    public ImageAdapter(Context context, ArrayList<String> arrayList) {
+    ImageAdapterAcateno.OnItemClickListener onItemClickListener;
+    public ImageAdapterAcateno(Context context, ArrayList<String> arrayList) {
         this.context = context;
         this.arrayList = arrayList;
     }
 
+
+
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.image_list_item, parent, false);
-        return new ViewHolder(view);
+    public ImageAdapterAcateno.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(context).inflate(R.layout.image_list_item_acateno, parent, false);
+        return new ImageAdapterAcateno.ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ImageAdapterAcateno.ViewHolder holder, int position) {
         Glide.with(context).load(arrayList.get(position)).into(holder.imageView);
         holder.itemView.setOnClickListener(view -> onItemClickListener.onClick(holder.imageView, arrayList.get(position)));
     }
@@ -50,7 +53,7 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ViewHolder> 
         }
     }
 
-    public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
+    public void setOnItemClickListener(ImageAdapterAcateno.OnItemClickListener onItemClickListener) {
         this.onItemClickListener = onItemClickListener;
     }
 

@@ -1,5 +1,4 @@
-package com.example.tezturist.atoluca;
-
+package com.example.tezturist.acateno;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -8,49 +7,48 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
+
 import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.ImageView;
 
-import com.example.tezturist.atoluca.fragmentsBotones.FragmentActividades;
-import com.example.tezturist.atoluca.fragmentsBotones.FragmentEventos;
+import com.example.tezturist.R;
+import com.example.tezturist.atoluca.ActivityAtoluca;
 import com.example.tezturist.atoluca.carruselAtoluca.ImageAdapter;
 import com.example.tezturist.atoluca.carruselAtoluca.ImageViewActivity;
-import com.example.tezturist.R;
+import com.example.tezturist.atoluca.fragmentsBotones.FragmentActividades;
+import com.example.tezturist.atoluca.fragmentsBotones.FragmentEventos;
 import com.example.tezturist.atoluca.fragmentsBotones.FragmentHistoria;
-import com.example.tezturist.clima.ActivityLugares;
 import com.example.tezturist.clima.MainWeather;
-import com.example.tezturist.fragmentsPrincipales.FragmentTres;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
 
-public class ActivityAtoluca extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-
+public class ActivityAcateno extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private DrawerLayout drawerLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_atoluca);
+        setContentView(R.layout.activity_acateno);
         //boton para abrir el clima
-        Button btnClimaAtoluca = findViewById(R.id.btnClimaAtoluca);
+        Button btnClimaAcateno = findViewById(R.id.btnClimaAcateno);
 
-//accion boton coordenadas para el clima
-        btnClimaAtoluca.setOnClickListener(new View.OnClickListener() {
+        //accion boton coordenadas para el clima
+        btnClimaAcateno.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 abrirMainWeather(19.9631125, -97.2328597);
             }
         });
 
-        RecyclerView recyclerView = findViewById(R.id.recycler);
+
+        RecyclerView recyclerView = findViewById(R.id.recycler2);
         ArrayList<String> arrayList = new ArrayList<>();
 
         arrayList.add("https://scontent.fjal2-1.fna.fbcdn.net/v/t39.30808-6/401694714_308024552215573_1226869390937196813_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeGpOusvfqz2-ZO0h8V_pwkrxlsesJsAvK3GWx6wmwC8rRk8XHqGnbV15XZ9Sm8rGF_lj2a9YdGaGcaejk9a7p5E&_nc_ohc=4wws0IYIsBAAX9MWwq-&_nc_ht=scontent.fjal2-1.fna&oh=00_AfCrA6UTpScba3G-JujUgDAB0iPphRv3KDzMCC0I_0O-2A&oe=65597C30");
@@ -69,15 +67,13 @@ public class ActivityAtoluca extends AppCompatActivity implements NavigationView
         arrayList.add("https://scontent.fjal2-1.fna.fbcdn.net/v/t39.30808-6/276320107_5266618603431392_4001952240193280070_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeEE5K--VsQPhPUmsknIBZ--nf2No8MXreed_Y2jwxet56cbRd7TYvaffhjWuJDTFWvzy5Ec-blFL8bo4X3luP2m&_nc_ohc=fVj54ETprS8AX-Kbc6y&_nc_ht=scontent.fjal2-1.fna&oh=00_AfAz9OesHBLkzLVJgBkww3uQKIW-lqrU6xtqYGF6eMk1jg&oe=65583522");
 
 
-        ImageAdapter adapter = new ImageAdapter(ActivityAtoluca.this, arrayList);
+        ImageAdapter adapter = new ImageAdapter(ActivityAcateno.this, arrayList);
         recyclerView.setAdapter(adapter);
 
         adapter.setOnItemClickListener(new ImageAdapter.OnItemClickListener() {
             @Override
             public void onClick(ImageView imageView, String path) {
-                startActivity(new Intent(ActivityAtoluca.this, ImageViewActivity.class).putExtra("image", path), ActivityOptions.makeSceneTransitionAnimation(ActivityAtoluca.this, imageView, "image").toBundle());
-
-
+                startActivity(new Intent(ActivityAcateno.this, ImageViewActivity.class).putExtra("image", path), ActivityOptions.makeSceneTransitionAnimation(ActivityAcateno.this, imageView, "image").toBundle());
 
             }
         });
@@ -127,18 +123,18 @@ public class ActivityAtoluca extends AppCompatActivity implements NavigationView
         toggle.syncState();
 
 
-
     }
+
 
 //metodo para mandar los parametos del clima de atoluca
 
     private void abrirMainWeather(double latitude, double longitude) {
-        Intent intent = new Intent(ActivityAtoluca.this, MainWeather.class);
+        Intent intent = new Intent(ActivityAcateno.this, MainWeather.class);
         intent.putExtra("latitude", latitude);
         intent.putExtra("longitude", longitude);
         startActivity(intent);
     }
-//2 metodo para la barra lateral atoluca
+    //2 metodo para la barra lateral atoluca
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         return false;

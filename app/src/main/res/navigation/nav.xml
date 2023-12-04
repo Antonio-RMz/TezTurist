@@ -9,15 +9,28 @@
         android:name="com.example.tezturist.fragmentsPrincipales.FragmentUno"
         tools:layout="@layout/fragment_uno">
 
-             <action
-             android:id="@+id/action_page_inicio_to_fragmentAtoluca"
-             app:destination="@id/fragmentAtoluca" />
+
                 <action
                 android:id="@+id/action_page_inicio_to_activityAtoluca"
                 app:destination="@id/activityAtoluca" />
         <action
             android:id="@+id/action_page_inicio_to_page_rutas"
             app:destination="@id/page_rutas" />
+        <action
+            android:id="@+id/action_page_inicio_to_activityTeziutlan"
+            app:destination="@id/activityTeziutlan" />
+        <action
+            android:id="@+id/action_page_inicio_to_activityMexcal"
+            app:destination="@id/activityMexcal" />
+        <action
+            android:id="@+id/action_page_inicio_to_mainActivitySanDiego"
+            app:destination="@id/mainActivitySanDiego" />
+        <action
+            android:id="@+id/action_page_inicio_to_activitySanSebas"
+            app:destination="@id/activitySanSebas" />
+        <action
+            android:id="@+id/action_page_inicio_to_activityAcateno"
+            app:destination="@id/activityAcateno" />
 
 
     </fragment>
@@ -41,16 +54,6 @@
         tools:layout="@layout/fragment_tres"/>
 
 
-    <fragment
-        android:id="@+id/fragmentAtoluca"
-        android:name="com.example.tezturist.FragmentAtoluca"
-        android:label="fragment_atoluca"
-        tools:layout="@layout/fragment_atoluca" >
-        <action
-            android:id="@+id/action_fragmentAtoluca_to_page_inicio"
-            app:destination="@id/page_inicio" />
-    </fragment>
-
 
 
     <activity
@@ -58,5 +61,30 @@
         android:name="com.example.tezturist.atoluca.ActivityAtoluca"
         android:label="activity_atoluca"
         tools:layout="@layout/activity_atoluca" />
+    <activity
+        android:id="@+id/activityTeziutlan"
+        android:name="com.example.tezturist.teziutlan.ActivityTeziutlan"
+        android:label="activity_teziutlan"
+        tools:layout="@layout/activity_teziutlan" />
+    <activity
+        android:id="@+id/activityMexcal"
+        android:name="com.example.tezturist.mexcal.ActivityMexcal"
+        android:label="activity_mexcal"
+        tools:layout="@layout/activity_mexcal" />
+    <activity
+        android:id="@+id/mainActivitySanDiego"
+        android:name="com.example.tezturist.san_diego.MainActivitySanDiego"
+        android:label="activity_main_san_diego"
+        tools:layout="@layout/activity_main_san_diego" />
+    <activity
+        android:id="@+id/activitySanSebas"
+        android:name="com.example.tezturist.san_sebas.ActivitySanSebas"
+        android:label="activity_san_sebas"
+        tools:layout="@layout/activity_san_sebas" />
+    <activity
+        android:id="@+id/activityAcateno"
+        android:name="com.example.tezturist.acateno.ActivityAcateno"
+        android:label="activity_acateno"
+        tools:layout="@layout/activity_acateno" />
 
 </navigation>

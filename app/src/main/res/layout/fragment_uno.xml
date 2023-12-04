@@ -193,7 +193,7 @@
                         android:orientation="horizontal">
 
                         <com.google.android.material.button.MaterialButton
-                            android:id="@+id/button2"
+                            android:id="@+id/btnVerMasTez"
                             style="?attr/borderlessButtonStyle"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -202,6 +202,7 @@
 
                         <com.google.android.material.button.MaterialButton
                             style="?attr/borderlessButtonStyle"
+                            android:id="@+id/btnVerMapaTez"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Ver mapa" />
@@ -263,7 +264,7 @@
                         android:orientation="horizontal">
 
                         <com.google.android.material.button.MaterialButton
-                            android:id="@+id/button3"
+                            android:id="@+id/btnVerMasMexcal"
                             style="?attr/borderlessButtonStyle"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -271,6 +272,7 @@
                             android:text="Ver más" />
 
                         <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnVerMapaMexcal"
                             style="?attr/borderlessButtonStyle"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -340,7 +342,7 @@
                         android:orientation="horizontal">
 
                         <com.google.android.material.button.MaterialButton
-                            android:id="@+id/button4"
+                            android:id="@+id/btnVerMasDiego"
                             style="?attr/borderlessButtonStyle"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -348,6 +350,7 @@
                             android:text="Ver más" />
 
                         <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnVerMapaDiego"
                             style="?attr/borderlessButtonStyle"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -409,7 +412,7 @@
                         android:orientation="horizontal">
 
                         <com.google.android.material.button.MaterialButton
-                            android:id="@+id/button5"
+                            android:id="@+id/btnVerMasSebas"
                             style="?attr/borderlessButtonStyle"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -417,6 +420,7 @@
                             android:text="Ver mas" />
 
                         <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnVerMapaSebas"
                             style="?attr/borderlessButtonStyle"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -478,7 +482,7 @@
                         android:orientation="horizontal">
 
                         <com.google.android.material.button.MaterialButton
-                            android:id="@+id/button6"
+                            android:id="@+id/btnVerMasAcateno"
                             style="?attr/borderlessButtonStyle"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -486,6 +490,7 @@
                             android:text="Ver mas" />
 
                         <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnVerMapaAcateno"
                             style="?attr/borderlessButtonStyle"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"

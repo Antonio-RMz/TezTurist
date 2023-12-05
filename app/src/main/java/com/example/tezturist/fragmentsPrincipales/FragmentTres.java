@@ -193,7 +193,6 @@ public class FragmentTres extends Fragment {
                         lastNameEditText.setText(user.getLastName());
                         middleNameEditText.setText(user.getMiddleName());
 
-                        // Aquí se asume que tienes un método getImageUrl() en tu clase User
                         String imageUrl = user.getImageUrl();
                         if (imageUrl != null && !imageUrl.isEmpty()) {
                             // Utiliza alguna biblioteca de carga de imágenes (por ejemplo, Picasso o Glide)

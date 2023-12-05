@@ -51,9 +51,7 @@
         <activity
             android:name=".login1.ForgotPassword1"
             android:exported="false" /> <!-- Se tienen que declarar los activitys a los que se van a relacionar -->
-        <activity
-            android:name=".login.ActivityRegister"
-            android:exported="false" />
+
         <activity
             android:name=".login1.LoginActivity1"
             android:exported="false" />

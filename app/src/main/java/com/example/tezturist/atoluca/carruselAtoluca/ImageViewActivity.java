@@ -15,7 +15,7 @@ public class ImageViewActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_image_view);
 
-        ImageView imageView = findViewById(R.id.imageView);
+        ImageView imageView = findViewById(R.id.imageViewAtoluca);
 
         Glide.with(ImageViewActivity.this).load(getIntent().getStringExtra("image")).into(imageView);
     }

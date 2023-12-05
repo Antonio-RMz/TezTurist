@@ -68,7 +68,7 @@ public class LoginActivity1 extends AppCompatActivity {
         contraseñaTextFile = findViewById(R.id.contraseñaTextFile);
         inicioSesion = findViewById(R.id.inicioSesion);
         nuevoUsuario = findViewById(R.id.nuevoUsuario);
-      //  olvidasteContrasena = findViewById(R.id.olvidasteContra);
+        olvidasteContrasena = findViewById(R.id.olvidasteContra);
 
         progressBar = findViewById(R.id.circuloProgreso);
 
@@ -123,13 +123,13 @@ public class LoginActivity1 extends AppCompatActivity {
         });
 
 
-      /*  signInButton = findViewById(R.id.loginGoogle);
+        signInButton = findViewById(R.id.loginGoogle);
         signInButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 signInWithGoogle();
             }
-        });*/
+        });
 
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)

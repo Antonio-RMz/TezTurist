@@ -47,6 +47,9 @@ public class MainAdapterAtolucaActividades extends FirebaseRecyclerAdapter<MainM
         return new MainAdapterAtolucaActividades.myViewHolder(view);
     }
 
+    public void setAdapter(MainAdapterAtolucaActividades mainAdapterHistoria) {
+    }
+
     class myViewHolder extends RecyclerView.ViewHolder {
         ImageView img;
         TextView nombre, descripcion;

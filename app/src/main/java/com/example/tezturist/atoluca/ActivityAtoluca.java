@@ -5,9 +5,11 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
+
 import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,6 +19,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageView;
 
+import com.example.tezturist.MainActivity1;
 import com.example.tezturist.atoluca.fragmentsBotones.FragmentActividades;
 import com.example.tezturist.atoluca.fragmentsBotones.FragmentEventos;
 import com.example.tezturist.atoluca.carruselAtoluca.ImageAdapter;
@@ -26,6 +29,7 @@ import com.example.tezturist.atoluca.fragmentsBotones.FragmentHistoria;
 import com.example.tezturist.clima.ActivityLugares;
 import com.example.tezturist.clima.MainWeather;
 import com.example.tezturist.fragmentsPrincipales.FragmentTres;
+import com.example.tezturist.fragmentsPrincipales.FragmentUno;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
@@ -71,7 +75,6 @@ public class ActivityAtoluca extends AppCompatActivity implements NavigationView
                 startActivity(new Intent(ActivityAtoluca.this, ImageViewActivity.class).putExtra("image", path), ActivityOptions.makeSceneTransitionAnimation(ActivityAtoluca.this, imageView, "image").toBundle());
 
 
-
             }
         });
         // Configuración de los botones y sus manejadores de clics
@@ -81,7 +84,7 @@ public class ActivityAtoluca extends AppCompatActivity implements NavigationView
 
         View.OnClickListener buttonClickListener = new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View view) { //acciones para los tres botones de la actividad atoluca
                 Fragment fragment;
 
                 if (view.getId() == R.id.btnActividades) {
@@ -120,7 +123,6 @@ public class ActivityAtoluca extends AppCompatActivity implements NavigationView
         toggle.syncState();
 
 
-
     }
 
 //metodo para mandar los parametos del clima de atoluca
@@ -131,9 +133,27 @@ public class ActivityAtoluca extends AppCompatActivity implements NavigationView
         intent.putExtra("longitude", longitude);
         startActivity(intent);
     }
-//2 metodo para la barra lateral atoluca
+
+    //2 metodo para la barra lateral atoluca, darle acciones
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        return false;
+        int itemId = item.getItemId();
+
+        if (itemId == R.id.nav_inicio) {
+            // Iniciar una nueva actividad con FragmentUno
+            Intent intent = new Intent(ActivityAtoluca.this, MainActivity1.class);
+            intent.putExtra("fragment", "FragmentUno");
+            startActivity(intent);
+        } else if (itemId == R.id.nav_configuracion) {
+            // Iniciar una nueva actividad con FragmentTres
+            Intent intent = new Intent(ActivityAtoluca.this, FragmentTres.class);
+            intent.putExtra("fragment", "FragmentTres");
+            startActivity(intent);
+        }
+        // Puedes agregar más bloques if para otros ítems según sea necesario...
+
+        drawerLayout.closeDrawer(GravityCompat.START); // Cerrar la barra lateral después de hacer clic
+        return true;
     }
+
 }

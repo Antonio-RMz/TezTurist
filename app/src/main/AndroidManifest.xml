@@ -18,6 +18,13 @@
         android:theme="@style/Theme.TezTurist"
         tools:targetApi="31">
         <activity
+            android:name=".fragmentsPrincipales.FragmentTres"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="adjustResize">
+            <!-- Otros atributos de la actividad -->
+        </activity>
+        <activity
             android:name=".acateno.carruselAcateno.ImageViewActivityAcateno"
             android:exported="false" />
         <activity

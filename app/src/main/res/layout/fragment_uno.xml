@@ -100,7 +100,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="8dp"
-                            android:text="La perla de la sierra"
+                            android:text="Lugar donde el camino se llena de agua"
                             android:textAppearance="?attr/textAppearanceBodyMedium"
                             android:textColor="?android:attr/textColorSecondary"
                             android:textStyle="bold" />

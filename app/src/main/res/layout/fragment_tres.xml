@@ -73,7 +73,8 @@
             app:layout_constraintHorizontal_bias="0.769"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.294" />
+            app:layout_constraintVertical_bias="0.294"
+            android:checked="true"/>
 
         <com.google.android.material.card.MaterialCardView
             android:layout_width="319dp"
@@ -229,7 +230,7 @@
             android:id="@+id/logoutButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Cerrar sesion"
+            android:text="Cerrar sesión"
             app:icon="@drawable/icon_cerrarsesion"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

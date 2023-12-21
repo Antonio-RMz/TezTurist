@@ -195,9 +195,7 @@ public class FragmentTres extends Fragment {
 
                         String imageUrl = user.getImageUrl();
                         if (imageUrl != null && !imageUrl.isEmpty()) {
-                            // Utiliza alguna biblioteca de carga de imágenes (por ejemplo, Picasso o Glide)
-                            // para cargar la imagen desde la URL en CircleImageView
-                            // Puedes ajustar esta parte según la biblioteca que estés utilizando
+                            //  cargar la imagen desde la URL en CircleImageView
                             Picasso.get().load(imageUrl).into(imageView);
                         }
                     }

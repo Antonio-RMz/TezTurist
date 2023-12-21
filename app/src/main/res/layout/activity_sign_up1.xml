@@ -103,7 +103,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="12dp"
-                    android:hint="Email"
+                    android:hint="Correo"
                     android:transitionName="emailInputTextTrans">
 
                     <com.google.android.material.textfield.TextInputEditText
